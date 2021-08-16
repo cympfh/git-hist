@@ -26,11 +26,11 @@ You can use `git-hist` as a git subcommand, so the hyphen is not required.
 
 ### Commands
 
-- `Left`/`Right`: Go to a previous/next commit.
-- `Up`/`Down` or mouse scrolls: Scroll up/down.
-- `PageUp`/`PageDown`: Scroll page up/down.
-- `Home`/`End`: Scroll to the top/bottom.
-- `q`/`Ctrl+c`/`Ctrl+d`: Exit.
+- `Left`/`h`; `Right`/`l`: Go to a previous; next commit.
+- `Up`/`k`; `Down`/`j` or mouse scrolls: Scroll up; down.
+- `PageUp`/`Ctrl+d`; `PageDown`/`Ctrl+u`: Scroll page up; down.
+- `Home`/`g`; `End`/`G`: Scroll to the top; bottom.
+- `q`/`Ctrl+c`: Exit.
 
 ### Help
 

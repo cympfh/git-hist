@@ -11,43 +11,71 @@ pub fn poll_next_event<'a>(state: State<'a>, history: &'a History) -> Result<Opt
                 modifiers: KeyModifiers::CONTROL,
             }
             | KeyEvent {
-                code: KeyCode::Char('d'),
-                modifiers: KeyModifiers::CONTROL,
-            }
-            | KeyEvent {
                 code: KeyCode::Char('q'),
                 modifiers: _,
             } => Ok(None),
             KeyEvent {
                 code: KeyCode::Left,
                 modifiers: _,
+            }
+            | KeyEvent {
+                code: KeyCode::Char('h'),
+                modifiers: _,
             } => Ok(Some(state.backward_commit(history))),
             KeyEvent {
                 code: KeyCode::Right,
+                modifiers: _,
+            }
+            | KeyEvent {
+                code: KeyCode::Char('l'),
                 modifiers: _,
             } => Ok(Some(state.forward_commit(history))),
             KeyEvent {
                 code: KeyCode::Up,
                 modifiers: _,
+            }
+            | KeyEvent {
+                code: KeyCode::Char('k'),
+                modifiers: _,
             } => Ok(Some(state.scroll_line_up())),
             KeyEvent {
                 code: KeyCode::Down,
+                modifiers: _,
+            }
+            | KeyEvent {
+                code: KeyCode::Char('j'),
                 modifiers: _,
             } => Ok(Some(state.scroll_line_down())),
             KeyEvent {
                 code: KeyCode::PageUp,
                 modifiers: _,
+            }
+            | KeyEvent {
+                code: KeyCode::Char('u'),
+                modifiers: KeyModifiers::CONTROL,
             } => Ok(Some(state.scroll_page_up())),
             KeyEvent {
                 code: KeyCode::PageDown,
                 modifiers: _,
+            }
+            | KeyEvent {
+                code: KeyCode::Char('d'),
+                modifiers: KeyModifiers::CONTROL,
             } => Ok(Some(state.scroll_page_down())),
             KeyEvent {
                 code: KeyCode::Home,
                 modifiers: _,
+            }
+            | KeyEvent {
+                code: KeyCode::Char('g'),
+                modifiers: _,
             } => Ok(Some(state.scroll_to_top())),
             KeyEvent {
                 code: KeyCode::End,
+                modifiers: _,
+            }
+            | KeyEvent {
+                code: KeyCode::Char('G'),
                 modifiers: _,
             } => Ok(Some(state.scroll_to_bottom())),
             _ => Ok(Some(state)),
